@@ -2,11 +2,7 @@
 
 namespace CoworkHub.Contracts.Models
 {
-    public class SpaceBooking
+    public class SpaceBooking : SpaceBookingBase
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public DateTime DateRequested { get; set; }
     }
 }

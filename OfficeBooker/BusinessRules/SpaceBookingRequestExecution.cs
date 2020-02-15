@@ -21,16 +21,15 @@ namespace CoworkHub.OfficeBooker.BusinessRules
                 throw new ArgumentNullException(nameof(userRequest));
             }
 
-            _repository.Save(new SpaceBooking
-            {
-                FirstName = userRequest.FirstName,
-                LastName = userRequest.LastName,
-                Email = userRequest.Email,
-                DateRequested = userRequest.DateRequested
-            });
+            _repository.Save(Create<SpaceBooking>(userRequest));
 
-            return new SpaceBookingResult
-            { 
+            return Create<SpaceBookingResult>(userRequest);
+        }
+
+        private T Create<T>(SpaceBookingRequest userRequest) where T : SpaceBookingBase, new()
+        {
+            return new T
+            {
                 FirstName = userRequest.FirstName,
                 LastName = userRequest.LastName,
                 Email = userRequest.Email,
