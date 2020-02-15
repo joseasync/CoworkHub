@@ -1,11 +1,12 @@
-﻿using OfficeBooker.BusinessRules.Models;
+﻿using CoworkHub.DAL.Interfaces;
+using OfficeBooker.Models;
 using System;
 
 namespace OfficeBooker.BusinessRules
 {
     public class SpaceBookingRequestExecution
     {
-        public SpaceBookingRequestExecution()
+        public SpaceBookingRequestExecution(ISpaceBookingRepository obj)
         {
         }
 

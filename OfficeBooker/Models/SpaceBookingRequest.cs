@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OfficeBooker.BusinessRules.Models
+namespace OfficeBooker.Models
 {
     public class SpaceBookingRequest
     {
