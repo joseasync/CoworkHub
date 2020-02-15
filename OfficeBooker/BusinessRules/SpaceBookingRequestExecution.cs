@@ -11,6 +11,12 @@ namespace OfficeBooker.BusinessRules
 
         public SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
         {
+            if (userRequest == null)
+            {
+                throw new ArgumentNullException(nameof(userRequest));
+            }
+
+
             return new SpaceBookingResult
             { 
                 FirstName = userRequest.FirstName,
@@ -18,7 +24,6 @@ namespace OfficeBooker.BusinessRules
                 Email = userRequest.Email,
                 DateRequested = userRequest.DateRequested
             };
-
         }
     }
 }
