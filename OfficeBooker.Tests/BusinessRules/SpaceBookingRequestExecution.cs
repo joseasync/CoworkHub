@@ -10,7 +10,14 @@ namespace OfficeBooker.BusinessRules
 
         internal SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
         {
-            throw new NotImplementedException();
+            return new SpaceBookingResult
+            {
+                FirstName = userRequest.FirstName,
+                LastName = userRequest.LastName,
+                Email = userRequest.Email,
+                DateRequested = userRequest.DateRequested
+            };
+
         }
     }
 }
