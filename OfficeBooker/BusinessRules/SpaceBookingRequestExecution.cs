@@ -1,17 +1,18 @@
-﻿using System;
+﻿using OfficeBooker.BusinessRules.Models;
+using System;
 
 namespace OfficeBooker.BusinessRules
 {
-    internal class SpaceBookingRequestExecution
+    public class SpaceBookingRequestExecution
     {
         public SpaceBookingRequestExecution()
         {
         }
 
-        internal SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
+        public SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
         {
             return new SpaceBookingResult
-            {
+            { 
                 FirstName = userRequest.FirstName,
                 LastName = userRequest.LastName,
                 Email = userRequest.Email,

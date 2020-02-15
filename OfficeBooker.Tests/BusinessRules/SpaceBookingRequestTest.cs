@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OfficeBooker.BusinessRules.Models;
+using System;
 using Xunit;
 
 namespace OfficeBooker.BusinessRules

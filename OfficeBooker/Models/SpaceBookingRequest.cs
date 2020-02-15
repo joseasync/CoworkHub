@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace OfficeBooker.BusinessRules
+namespace OfficeBooker.BusinessRules.Models
 {
-    internal class SpaceBookingRequest
+    public class SpaceBookingRequest
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
