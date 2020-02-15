@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoworkHub.Contracts\CoworkHub.Contracts.csproj" />
     <ProjectReference Include="..\CoworkHub.DAL\CoworkHub.DAL.csproj" />
   </ItemGroup>
 

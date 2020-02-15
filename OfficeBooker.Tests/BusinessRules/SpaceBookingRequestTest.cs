@@ -1,16 +1,17 @@
 ﻿using CoworkHub.DAL.Interfaces;
 using Moq;
-using OfficeBooker.Models;
+using CoworkHub.Contracts.Models;
 using System;
 using Xunit;
+using CoworkHub.OfficeBooker.BusinessRules;
 
-namespace OfficeBooker.BusinessRules
+namespace CoworkHub.OfficeBooker.Testes
 {
     public class SpaceBookingRequestTest
     {
-        private readonly SpaceBookingRequestExecution _executor;
-        private readonly SpaceBookingRequest _userRequest;
-        private readonly Mock<ISpaceBookingRepository> _SpaceBookingRepositoryMock;
+        private SpaceBookingRequestExecution _executor;
+        private SpaceBookingRequest _userRequest;
+        private Mock<ISpaceBookingRepository> _SpaceBookingRepositoryMock;
 
         public SpaceBookingRequestTest()
         {
@@ -67,14 +68,15 @@ namespace OfficeBooker.BusinessRules
                                              {
                                                  savedSpaceBooking = spaceBooking;
                                              });
-
             //Act
             _executor.BookSpace(_userRequest);
             _SpaceBookingRepositoryMock.Verify(x => x.Save(It.IsAny<SpaceBooking>()), Times.Once);
 
             //Assert
             Assert.NotNull(savedSpaceBooking);
-            Assert.True(_userRequest.Equals(savedSpaceBooking));
+            Assert.Same(_userRequest.FirstName, savedSpaceBooking.FirstName);
+            Assert.Same(_userRequest.LastName, savedSpaceBooking.LastName);
+            Assert.Same(_userRequest.Email, savedSpaceBooking.Email);
 
 
         }

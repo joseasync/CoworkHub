@@ -1,7 +1,9 @@
-﻿namespace CoworkHub.DAL.Interfaces
+﻿using CoworkHub.Contracts.Models;
+
+namespace CoworkHub.DAL.Interfaces
 {
     public interface ISpaceBookingRepository
     {
-        void Save(object spaceBooking);
+        void Save(SpaceBooking spaceBooking);
     }
 }

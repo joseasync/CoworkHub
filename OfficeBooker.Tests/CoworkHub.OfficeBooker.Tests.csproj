@@ -17,8 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoworkHub.Contracts\CoworkHub.Contracts.csproj" />
     <ProjectReference Include="..\CoworkHub.DAL\CoworkHub.DAL.csproj" />
-    <ProjectReference Include="..\OfficeBooker\OfficeBooker.csproj" />
+    <ProjectReference Include="..\OfficeBooker\CoworkHub.OfficeBooker.csproj" />
   </ItemGroup>
 
 </Project>

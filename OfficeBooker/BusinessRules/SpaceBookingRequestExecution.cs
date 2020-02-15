@@ -1,14 +1,18 @@
 ﻿using CoworkHub.DAL.Interfaces;
-using OfficeBooker.Models;
+using CoworkHub.Contracts.Models;
 using System;
 
-namespace OfficeBooker.BusinessRules
+namespace CoworkHub.OfficeBooker.BusinessRules
 {
     public class SpaceBookingRequestExecution
     {
-        public SpaceBookingRequestExecution(ISpaceBookingRepository obj)
+        private readonly ISpaceBookingRepository _repository;
+
+        public SpaceBookingRequestExecution(ISpaceBookingRepository repository)
         {
+            _repository = repository;
         }
+
 
         public SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
         {
@@ -17,6 +21,13 @@ namespace OfficeBooker.BusinessRules
                 throw new ArgumentNullException(nameof(userRequest));
             }
 
+            _repository.Save(new SpaceBooking
+            {
+                FirstName = userRequest.FirstName,
+                LastName = userRequest.LastName,
+                Email = userRequest.Email,
+                DateRequested = userRequest.DateRequested
+            });
 
             return new SpaceBookingResult
             { 
