@@ -31,6 +31,18 @@ namespace OfficeBooker.BusinessRules
             Assert.Equal(userRequest.DateRequested, result.DateRequested);
         }
 
+        public void ShouldThrowExceptionIfNullRequest()
+        {
+            //Arrange
+            var executor = new SpaceBookingRequestExecution();
+
+            //Act
+            var exception = Assert.Throws<ArgumentException>(() => executor.BookSpace(null));
+
+            //Assert
+            Assert.Equal("request", exception.ParamName);
+        }
+
 
     }
 }
