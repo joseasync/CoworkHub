@@ -6,6 +6,14 @@ namespace OfficeBooker.BusinessRules
 {
     public class SpaceBookingRequestTest
     {
+        private SpaceBookingRequestExecution _executor;
+
+        public SpaceBookingRequestTest()
+        {
+            //Arrange
+            _executor = new SpaceBookingRequestExecution();
+        }
+
         [Fact]
         public void ShouldReturnSpaceResultWithRequestValues()
         {
@@ -17,11 +25,9 @@ namespace OfficeBooker.BusinessRules
                 Email = "jose.cruz@gmail.com",
                 DateRequested = new DateTime(2020, 01, 05)
             };
-            var executor = new SpaceBookingRequestExecution();
 
             //Act
-            SpaceBookingResult result =  executor.BookSpace(userRequest);
-
+            SpaceBookingResult result =  _executor.BookSpace(userRequest);
 
             //Assert
             Assert.NotNull(result);
@@ -34,11 +40,8 @@ namespace OfficeBooker.BusinessRules
         [Fact]
         public void ShouldThrowExceptionIfNullRequest()
         {
-            //Arrange
-            var executor = new SpaceBookingRequestExecution();
-
             //Act
-            var exception = Assert.Throws<ArgumentNullException>(() => executor.BookSpace(null));
+            var exception = Assert.Throws<ArgumentNullException>(() => _executor.BookSpace(null));
 
             //Assert
             Assert.Equal("userRequest", exception.ParamName);
