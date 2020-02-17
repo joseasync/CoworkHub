@@ -27,7 +27,7 @@ TDD is a Test Driven Development methodology. But more than just a way to test y
 Simple but...
 
 
-## Why do many companies request, but few use?\
+## Why do many companies request, but few use? 
 
 
 Don't judge the companies, most of them are trying to change their processes, but they are caught in the middle of it.\
