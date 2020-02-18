@@ -37,19 +37,19 @@ For example:
 - Learning curve
 - Employees resistance
 
-The best way to not feel any of those examples, you need be ready when this challenge apears.
+The best way to not feel any of those examples, you need to be ready when this challenge appears.
 Learning and understanding not just how but why TDD is a good way to code. Helping the processes with:
 
 - Code quality - One best way to start to code is knowing how the scenario works.
-- Logic - Having a big picture, you can avoid unecessary dependencies and couplings.
-- Reliability - Being comfortable to solve the problems, therefore, less stress less blocks saving time.
-- Team work - Everyone knows what's happening on the code by read the tests. 
+- Logic - Having a big picture, you can avoid unnecessary dependencies and couplings.
+- Reliability - Being comfortable to solve the problems, therefore, less stress, fewer blocks and saving time.
+- Teamwork - Everyone knows what's happening on the code by reading the tests. 
 - Documentation - Reading the Tests descriptions, the code tells you how the process works.
 
 ## Ok, so let's practice.
 
-I separated the requiriments by number on the commits (1 - 2 - 3).
-Remember the focus here is't in business methodology, DAL Access, service layers or architecture. I thik It would complicate the compreension. Just focus on the Process :), you can use it with, java, python even cobol. 
+I separated the requirements by the number on the commits (1 - 2 - 3).
+Remember the focus here isn't in business methodology, DAL Access, service layers or architecture. I think It would complicate the comprehension. Just focus on the Process :). 
 
 ### Create your Test Project
 
@@ -57,15 +57,16 @@ Select the xUnit Project.
 
 ![projectTDD](https://i.imgur.com/Idun2dd.jpg)
 
-### Create your Tests
 
-**Red Status** 
+
+
+## **Red Status**  :red_circle:
 
 We create our test class called `SpaceBookingRequestTest.cs` class with our basic first test `ShouldReturnSpaceResultWithRequestValues`.
 
 ![red1](https://i.imgur.com/pQchDcC.jpg)
 
-Use the Visual Studio to help you to auto generate Models `SpaceBookingRequest` and `SpaceBookingResult`.
+Use the Visual Studio to help you to auto-generate Models `SpaceBookingRequest` and `SpaceBookingResult`.
 
 ![red1_1](https://i.imgur.com/kXieVgS.jpg)
 
@@ -80,9 +81,65 @@ internal SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
 }
 ```
 
-Finalizing this, we'll have our test buildable but not passed (Red Circle).
+Finalizing this, we'll have our test buildable but not passed (Status: :red_circle: ).
 
 
+## **Green Status**  :heavy_check_mark:
+
+
+On this step, we need to ensure that the simple process is working, implementing the business rules code, just enough for the test to pass. Remember no fancy things for a while (Hold your emotions :satisfied:). 
+For the first test, our "business rule" will be just one set class for the compression.
+
+```csharp
+internal SpaceBookingResult BookSpace(SpaceBookingRequest userRequest)
+{
+    //throw new NotImplementedException(); <--<< Remove this part and implement your Business rules
+    //Imagine your complexity here xD 
+    return new SpaceBookingResult
+    {
+        FirstName = userRequest.FirstName,
+        LastName = userRequest.LastName,
+        Email = userRequest.Email,
+        DateRequested = userRequest.DateRequested
+    };
+
+}
+```
+(Status: :heavy_check_mark:)
+![green1](https://i.imgur.com/UmJa0UA.jpg)
+
+
+
+## **Refactor Status**  :repeat:
+
+Having the previous step done, **now** we can organise/make it "Beautiful" :grin:.
+ On the Refactor step, we can clean and organize the solution, obviously ensuring that the tests still working fine.
+ **On my example:**
+ 
+ - Organize the structure
+ - Change Internal to Public classes
+ - Create the Business part separated
+ - Using Hierarchy (On this example - 1, we have for a while, 2 class with the same code but with different objectives on the next examples). 
+ 
+ 
+![refactor](https://i.imgur.com/UfH8nkE.jpg)
+
+Having it done, you can create another test, going back to the first step (Red).
+
+
+
+### Conclusions
+
+I hope you enjoyed this tutorial. I think now, understanding the basics, you can follow the commits to improve your comprehension :blush:
+
+
+## Author
+Jose Ricardo Cruz\
+Software Engineer, Microsoft MCSA\
+You find me here:
+ - [LinkedIn](https://www.linkedin.com/in/jrgcruz/)
+ - [Twitter](https://twitter.com/josericardodev)
+ - [Instagram](https://www.instagram.com/josecruz.io/)
 
 
 
