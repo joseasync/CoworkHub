@@ -48,8 +48,8 @@ Learning and understanding not just how but why TDD is a good way to code. Helpi
 
 ## Ok, so let's practice.
 
-I separated the requirements by the number on the commits (1 - 2 - 3).
-Remember the focus here isn't in business methodology, DAL Access, service layers or architecture. I think It would complicate the comprehension. Just focus on the Process :). 
+I separated the requirements by the number ([1 - 2 - 3] - check the commits).
+Remember the focus here isn't in business methodology, DAL Access, service layers or architecture. I think It would complicate the comprehension. Just focus on the Process :full_moon_with_face:. 
 
 ### Create your Test Project
 
