@@ -3,7 +3,7 @@
 This is a practical example of how to follow the TDD Methodology in conjunction with [.NET Core 3.0](https://github.com/dotnet/aspnetcore) and [xUnit](https://xunit.net/). :battery:
 
 
-*Read this in other languages: [Portuguese](README.pt.md), [Svenska](README.se.md).*
+*Read this in other languages: [Portuguese](README.pt.md)
 
 
 ## What is TDD in resume. :star:
